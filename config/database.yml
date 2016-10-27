@@ -1,0 +1,18 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: microblog_development
+  pool: 5
+  host: localhost
+  username: microblog
+  password: microblog
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: microblog_test
+  pool: 5
+  host: localhost
+  username: microblog
+  password: microblog
