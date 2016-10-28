@@ -9,6 +9,10 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Bootstrap
+gem 'bootstrap-sass'
+# Font Awesome with SASS
+gem 'font-awesome-sass'
 # Javascript runtime
 gem 'therubyracer'
 # Use Uglifier as compressor for JavaScript assets
@@ -28,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

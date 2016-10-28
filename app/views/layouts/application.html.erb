@@ -4,11 +4,76 @@
     <title>Microblog</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0" role="navigation">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+            <span class="sr-only">Alterar navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/home/index.html">Microblog</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+          <form class="navbar-form navbar-left" >
+            <div class="form-group" >
+              <input id="search-box" class="form-control search-input" name="q" placeholder="Search" value="" type="text">
+              <button class="btn btn-default" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </form>
+          <% if user_signed_in? %>
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
+                <i class="fa fa-user fa-fw"></i>&nbsp;<%= login_label(current_user) %>
+                <i class="fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-user">
+                <li>
+                  <%= link_to "", title: login_label(current_user), :"onclick" => "event.preventDefault(); return false;", class: "element-tooltip" do %>
+                  <i class="fa fa-user fa-fw"></i>
+                  <%= login_label(current_user) %>
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Login", new_user_session_path %>
+            </li>
+        <% end %>
+      </ul>
+      </nav>
+      <% if user_signed_in? %>
+        <% #Usuário logado %>
+        <div id="page-wrapper">
+          <br />
+
+          <div class="row">
+            <div class="col-xs-12 m-b">
+
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <% #Usuário não logado %>
+        <div>
+
+          <div class="row" style="margin-top: 25px;">
+            <div class="col-xs-12">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </body>
 </html>
