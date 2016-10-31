@@ -12,13 +12,7 @@
     <div id="wrapper">
       <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0" role="navigation">
         <div class="navbar-header">
-          <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-            <span class="sr-only">Alterar navegação</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/home/index.html">Microblog</a>
+          <%= link_to "Microblog", root_path, class: "navbar-brand" %>
         </div>
         <ul class="nav navbar-top-links navbar-right">
           <form class="navbar-form navbar-left" >
@@ -42,6 +36,13 @@
                   <%= login_label(current_user) %>
                   <% end %>
                 </li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to destroy_user_session_path, :method => :delete do %>
+                    <i class="fa fa-sign-out fa-fw"></i>
+                    Sair
+                  <% end %>
+                </li>
               </ul>
             </li>
           <% else %>
@@ -54,11 +55,15 @@
       <% if user_signed_in? %>
         <% #Usuário logado %>
         <div id="page-wrapper">
-          <br />
-
-          <div class="row">
-            <div class="col-xs-12 m-b">
-
+          <%= display_flash_messages %>
+          <div class="col-xs-4 col-md-offset-4" style="margin-top: 25px;">
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Enter text" rows="3"></textarea>
+              <button class="btn btn-primary pull-right" style="margin-top: 10px;" type="button">Post</button>
+            </div>
+          </div>
+          <div class="col-xs-12 m-b">
+            <div class="row">
               <%= yield %>
             </div>
           </div>
@@ -66,8 +71,8 @@
       <% else %>
         <% #Usuário não logado %>
         <div>
-
-          <div class="row" style="margin-top: 25px;">
+          <%= display_flash_messages %>
+          <div class="row" >
             <div class="col-xs-12">
               <%= yield %>
             </div>

@@ -1,0 +1,6 @@
+<% flash.each do |type, message| %>
+  <div class="alert <%=bootstrap_class_for(type)%> alert-dismissable alert-modal">
+    <button class="close" type="button" data-dismiss="alert" aria-hidden="true">×</button>
+    <%= sanitize message %>
+  </div>
+<% end %>
