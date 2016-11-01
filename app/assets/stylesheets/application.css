@@ -23,6 +23,11 @@
    margin-top: 5px;
  }
 
+ .panel-heading {
+    padding-bottom: 25px !important;
+    margin-bottom: 0 !important;
+  }
+
  .margin-right-5 {
      margin-right: 5px !important;
  }
