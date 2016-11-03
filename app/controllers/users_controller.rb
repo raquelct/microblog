@@ -1,19 +1,14 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
-
-  # GET /users
-  # GET /users.json
-  def index
-    @users = User.all
-  end
+  before_action :set_user, only: [:show]
 
   # GET /users/1
   # GET /users/1.json
   def show
+     @posts = Post.by_user_id(@user.id).order("created_at DESC")
   end
 
   # GET /users/1/edit
-  def edit
+  def update
   end
 
   # POST /users
@@ -23,7 +18,11 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      #@user = User.find(params[:id])
+      @user = User.confirmed.by_username(params[:username]).first
+    if @user.blank?
+      render file: "public/404.html", status: 404
+      return
+    end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,0 +1,15 @@
+<li class="left clearfix">
+  <span class="chat-img pull-left">
+    <img class="img-circle" src="http://placehold.it/50/55C1E7/fff" alt="User Avatar">
+  </span>
+  <div class="chat-body clearfix">
+    <div class="header">
+      <strong class="primary-font"><%=current_user.name%></strong> <span class="username" style="color: #8899a6;">@<%=post.user.username%></span>
+      <small class="pull-right text-muted">
+        <i class="fa fa-clock-o fa-fw"></i>
+        <%=time_ago_in_words(post.created_at)%>
+      </small>
+    </div>
+    <p><%=post.content%></p>
+  </div>
+</li>

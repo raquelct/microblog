@@ -31,7 +31,7 @@
               </a>
               <ul class="dropdown-menu dropdown-user">
                 <li>
-                  <%= link_to "", title: login_label(current_user), :"onclick" => "event.preventDefault(); return false;", class: "element-tooltip" do %>
+                  <%= link_to posts_path, title: login_label(current_user), class: "element-tooltip" do %>
                   <i class="fa fa-user fa-fw"></i>
                   <%= login_label(current_user) %>
                   <% end %>
@@ -55,7 +55,9 @@
     <div>
       <%= display_flash_messages %>
     </div>
-    <%= yield %>
+      <div class="wrapper wrapper-content">
+      <%= yield %>
+      </div>
     </div>
   </body>
 </html>

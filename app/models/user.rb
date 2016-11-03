@@ -25,6 +25,41 @@ class User < ApplicationRecord
   # Avoid the problem with a username with an email format
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
 
+  # Finds an specific user by username
+ scope :by_username, lambda { |username| where("username" => username) }
+ # Finds all confirmed users
+ scope :confirmed, lambda { where("confirmed_at IS NOT NULL") }
+
+ # To determine whether a user can follow another, we have some pre-requisites:
+ # 1. The user to be followed can`t be the same user that wants to follow him (An user cannot follow himself)
+ # 2. The user to be followed can`t be followed yet by the user (You cannot have duplicates between a follower and followed pair)
+ def can_follow?(user)
+   self.id != user.id && !following?(user)
+ end
+
+ # Verifying whether a user is following another one
+ def following?(user)
+   !Following.find_by_follower_id_and_user_id(self.id, user.id).blank?
+ end
+
+ # Adds the user in parameter to the list of followeds of the instance user
+ def follow(user)
+   if can_follow?(user)
+     self.followeds << user
+     return true
+   end
+   false
+ end
+
+ # Removes the user in the parameter from the Followings table where the
+ # instance user is in the follower_id and the parameter user is in the user_id
+ def unfollow(user)
+   followed = Following.find_by_follower_id_and_user_id(self.id, user.id)
+   if !followed.blank?
+     followed.destroy
+   end
+ end
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
