@@ -23,27 +23,36 @@
    margin-top: 5px;
  }
 
-.chat-panel .panel-body {
-    height: auto !important;
-    overflow-y: hidden !important;
-}
+ .img-overlay {
+   position: absolute;
+   top: 105px;
+   bottom: 0;
+   left: 320px;
+   right: 0;
+   text-align: center;
+ }
 
-  .wrapper.wrapper-content {
-      padding: 40px !important;
-  }
+ .chat-panel .panel-body {
+   height: auto !important;
+   overflow-y: hidden !important;
+ }
 
-  .profile-image {
-    border: 4px solid #ffffff !important;
-    border-radius: 20% !important;
-}
+ .wrapper.wrapper-content {
+   padding: 40px !important;
+ }
+
+ .profile-image {
+   border: 4px solid #ffffff !important;
+   border-radius: 20% !important;
+ }
 
  .panel-heading {
-    padding-bottom: 25px !important;
-    margin-bottom: 0 !important;
-  }
+   padding-bottom: 25px !important;
+   margin-bottom: 0 !important;
+ }
 
  .margin-right-5 {
-     margin-right: 5px !important;
+   margin-right: 5px !important;
  }
 
  .request-closed {
@@ -91,110 +100,110 @@
    border-bottom: 1px solid #ddd;
  }
 
-  .hidden {
-    display: none;
-  }
+ .hidden {
+   display: none;
+ }
 
-  .bootstrap-datetimepicker-widget > ul {
-      list-style-type: none !important;
-      margin: 0 !important;
-      padding: 0 !important;
-  }
+ .bootstrap-datetimepicker-widget > ul {
+   list-style-type: none !important;
+   margin: 0 !important;
+   padding: 0 !important;
+ }
 
  .row {
-     margin-right: 0px !important;
+   margin-right: 0px !important;
  }
 
  .field_with_errors > input,
  .field_with_errors > select,
  .field_with_errors > textarea {
-     border-color: red !important;
+   border-color: red !important;
  }
 
  .field_with_errors > input[type=radio],
  .field_with_errors > input[type=file]{
-     outline: 1px solid red;
+   outline: 1px solid red;
  }
 
  /* User sign in and sign forms. */
  .border-form-div {
-     max-width: 330px;
-     padding: 19px 29px 29px;
-     margin: 0 auto 20px;
-     background-color: #fff;
-     border: 1px solid #e5e5e5;
-     -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-     border-radius: 5px;
-     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-     box-shadow: 0 1px 2px rgba(0,0,0,.05);
+   max-width: 330px;
+   padding: 19px 29px 29px;
+   margin: 0 auto 20px;
+   background-color: #fff;
+   border: 1px solid #e5e5e5;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+   box-shadow: 0 1px 2px rgba(0,0,0,.05);
  }
  .border-form-div .form-signin-heading,
  .border-form-div .checkbox {
-     margin-bottom: 10px;
+   margin-bottom: 10px;
  }
  .border-form-div input[type="text"],
  .border-form-div input[type="email"],
  .border-form-div input[type="password"] {
-     font-size: 16px;
-     height: auto;
-     margin-bottom: 15px;
-     padding: 7px 9px;
+   font-size: 16px;
+   height: auto;
+   margin-bottom: 15px;
+   padding: 7px 9px;
  }
 
  .pagination {
-     float: right;
-     margin: 0 !important;
+   float: right;
+   margin: 0 !important;
  }
 
  .right {
-     float: right !important;
-     margin-top: 0px !important;
-     margin-bottom: -10px !important;
+   float: right !important;
+   margin-top: 0px !important;
+   margin-bottom: -10px !important;
  }
 
  .filter-panel .panel-body {
-     padding: 0;
+   padding: 0;
  }
 
  .filter-panel .navbar {
-     border-radius: 0;
-     margin-bottom: 0;
+   border-radius: 0;
+   margin-bottom: 0;
  }
 
  .filter-panel .navbar-default {
-     background-color: #ffffff !important;
-     border: 0 none;
+   background-color: #ffffff !important;
+   border: 0 none;
  }
 
  .navbar {
-     z-index: 950 !important;
+   z-index: 950 !important;
  }
 
  .navbar-default {
-     background-color: #f8f8f8;
-     border-color: #e7e7e7;
+   background-color: #f8f8f8;
+   border-color: #e7e7e7;
  }
 
  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-     border-color: #e7e7e7;
+   border-color: #e7e7e7;
  }
 
  .navbar-form {
-     margin-left: -25px !important;
+   margin-left: -25px !important;
  }
 
  .navbar-form {
-     border: 0 none;
-     box-shadow: none;
-     margin-left: 0;
-     margin-right: 0;
-     padding-bottom: 0;
-     padding-top: 0;
-     width: auto;
+   border: 0 none;
+   box-shadow: none;
+   margin-left: 0;
+   margin-right: 0;
+   padding-bottom: 0;
+   padding-top: 0;
+   width: auto;
  }
 
  .panel-collapsable .panel-heading {
-     cursor: pointer;
+   cursor: pointer;
  }
