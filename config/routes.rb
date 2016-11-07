@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   get "/user/:username/follow" => 'users#follow', as: :follow_user, constraints: { username: /[^\/]+/ }
   get "/user/:username/unfollow" => 'users#unfollow', as: :unfollow_user, constraints: { username: /[^\/]+/ }
 
+  resources :users do
+    collection do
+      get "search"
+    end
+  end
+
   root to: 'home#index'
 
 

@@ -13,7 +13,15 @@ class UsersController < ApplicationController
   end
 
   def search
-
+    @users = []
+    if !params[:search].blank?
+      if params[:search].strip == ":all"
+        @users = User.confirmed
+      else
+        search_term = "%#{params[:search].strip.gsub(' ','%')}%"
+        User.confirmed.where('name ilike ? OR username ilike ?', search_term, search_term)
+      end
+    end
   end
 
   def follow

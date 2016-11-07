@@ -32,6 +32,19 @@
    text-align: center;
  }
 
+ .user-grid-item {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 5px;
+    max-height: 160px;
+    min-height: 160px;
+    min-width: 300px;
+    text-align: left;
+}
+
  .chat-panel .panel-body {
    height: auto !important;
    overflow-y: hidden !important;
