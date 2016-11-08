@@ -1,6 +1,6 @@
 <li class="left clearfix">
   <span class="chat-img pull-left">
-    <img class="profile-image" src="/assets/default-avatar.png" style="width: 50px; height: 50px;" alt="User Avatar">
+    <%= image_tag(current_user.avatar.url, class: "profile-image", style: "width: 50px; height: 50px;")%>
   </span>
   <div class="chat-body clearfix">
     <div class="header">

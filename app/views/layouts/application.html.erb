@@ -19,12 +19,12 @@
           <% if user_signed_in? %>
             <li class="dropdown">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
-                <i class="fa fa-user fa-fw"></i>&nbsp;<%= login_label(current_user) %>
+                <%= image_tag(current_user.avatar.url, class: "profile-image", style: "width: 30px; height: 30px;")%>&nbsp;<%= login_label(current_user) %>
                 <i class="fa fa-caret-down"></i>
               </a>
               <ul class="dropdown-menu dropdown-user">
                 <li>
-                  <%= link_to posts_path, title: login_label(current_user), class: "element-tooltip" do %>
+                  <%= link_to user_profile_path(current_user.username), title: login_label(current_user), class: "element-tooltip" do %>
                   <i class="fa fa-user fa-fw"></i>
                   <%= login_label(current_user) %>
                   <% end %>

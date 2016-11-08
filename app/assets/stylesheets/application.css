@@ -45,6 +45,14 @@
     text-align: left;
 }
 
+.user-profile-overlay {
+    color: white;
+    display: none;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
  .chat-panel .panel-body {
    height: auto !important;
    overflow-y: hidden !important;

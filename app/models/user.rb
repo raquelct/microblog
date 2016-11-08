@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  mount_uploader :avatar, AvatarUploader
+
   # An user has many posts
   has_many :posts, dependent: :destroy
   # Mapping the relationships for Followers and Followeds

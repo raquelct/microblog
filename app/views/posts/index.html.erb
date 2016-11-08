@@ -7,7 +7,7 @@
         </div>
         <div class="row">
           <div class="col-xs-3">
-            <img class="profile-image" src="/assets/default-avatar.png" style="width: 80px; height: 80px; margin-top: -25px;">
+            <%= image_tag(current_user.avatar.url, class: "profile-image img-circle circle-border m-b-md", style: "width: 80px; height: 80px; margin-top: -25px;")%>
           </div>
           <div class="col-xs-8 col-xs-offset-1" style="margin-top: 5px;">
             <div style="font-size: 18px;"><strong><%=current_user.name%></strong></div>

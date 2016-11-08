@@ -1,5 +1,9 @@
-<p>Welcome <%= @email %>!</p>
+<p>Hello, <%= @resource.name %></p>
 
 <p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) , style: "-moz-user-select: none; background-image: none; border: 1px solid transparent; cursor: pointer; display: inline-block; font-size: 14px; font-weight: normal; line-height: 1.42857; margin-bottom: 0; padding: 6px 12px; text-align: center; vertical-align: middle; white-space: nowrap; text-decoration: none; border-radius: 3px; background-color: #1ab394; border-color: #1ab394; color: #FFFFFF;" %></p>
+
+<p>To activate your account, click in the button above or use the link below:</p>
+
+<p><%= confirmation_url(@resource, confirmation_token: @token) %></p>
