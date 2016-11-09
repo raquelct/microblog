@@ -16,8 +16,9 @@
 //= require bootstrap-sprockets
 //= require_tree .
 // Submitting the user form, especially to change the user avatar, when the file field changes
-
+$(document).on("turbolinks:load", function() {
   // Submitting the user form, especially to change the user avatar, when the file field changes
   $('#user_avatar').on("change", function(event){
     $('#edit_user_form').submit();
   });
+});

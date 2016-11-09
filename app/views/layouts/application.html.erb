@@ -12,21 +12,25 @@
     <div id="wrapper">
       <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0" role="navigation">
         <div class="navbar-header">
-          <%= link_to "Microblog", root_path, class: "navbar-brand" %>
+            <%= link_to "Microblog", root_path, class: "navbar-brand" %>
         </div>
         <ul class="nav navbar-top-links navbar-right">
           <%= render partial: "layouts/search" %>
           <% if user_signed_in? %>
             <li class="dropdown">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
-                <%= image_tag(current_user.avatar.url, class: "profile-image", style: "width: 30px; height: 30px;")%>&nbsp;<%= login_label(current_user) %>
+                <%= image_tag(current_user.avatar.url, style: "width: 25px; height: 25px;")%>&nbsp;<%= login_label(current_user) %>
                 <i class="fa fa-caret-down"></i>
               </a>
               <ul class="dropdown-menu dropdown-user">
                 <li>
-                  <%= link_to user_profile_path(current_user.username), title: login_label(current_user), class: "element-tooltip" do %>
-                  <i class="fa fa-user fa-fw"></i>
-                  <%= login_label(current_user) %>
+                  <%= link_to user_profile_path(current_user.username), title: "Perfil", class: "element-tooltip" do %>
+                  Profile
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to posts_path, title: "Posts", class: "element-tooltip" do %>
+                  Posts
                   <% end %>
                 </li>
                 <li class="divider"></li>

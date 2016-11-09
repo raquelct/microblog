@@ -4,19 +4,19 @@
       <div class="row">
         <img src="/assets/banner.jpg" class="img-responsive">
         <% if !current_user.blank? && current_user.can_follow?(user) %>
-        <div class="img-overlay">
-          <%= link_to follow_user_path(user.username), class: "btn btn-default", style: "color: #676a6c;" do %>
-          <i class="fa fa-user-plus"></i>
-          Follow
-          <% end %>
-        </div>
+          <div class="img-overlay">
+            <%= link_to follow_user_path(user.username), class: "follow-btn btn-default", style: "color: #676a6c;" do %>
+            <i class="fa fa-user-plus"></i>
+            Follow
+            <% end %>
+          </div>
         <% elsif !current_user.blank? && current_user.following?(user) %>
-        <div class="img-overlay">
-          <%= link_to unfollow_user_path(user.username), class: "btn btn-default", style: "color: #676a6c;" do %>
-          <i class="fa fa-user-times"></i>
-          Unfollow
-          <% end %>
-        </div>
+          <div class="img-overlay">
+            <%= link_to unfollow_user_path(user.username), class: "follow-btn btn-default", style: "color: #676a6c;" do %>
+            <i class="fa fa-user-times"></i>
+            Unfollow
+            <% end %>
+          </div>
         <% end %>
       </div>
       <div class="row">
@@ -27,6 +27,9 @@
           <div style="font-size: 18px;"><strong><%=user.name%></strong></div>
           <div>@<%=user.username%></div>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2", style="margin-top: 10px;"><%="Joined at: " + user.created_at.to_s%></div>
       </div>
     </div>
   </div>

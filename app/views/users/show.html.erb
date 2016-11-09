@@ -6,14 +6,14 @@
           <img src="/assets/banner.jpg" class="img-responsive">
           <% if !current_user.blank? && current_user.can_follow?(@user) %>
             <div class="img-overlay">
-              <%= link_to follow_user_path(@user.username), class: "btn btn-default", style: "color: #676a6c;" do %>
+              <%= link_to follow_user_path(@user.username), class: "follow-btn btn-default", style: "color: #676a6c;" do %>
                 <i class="fa fa-user-plus"></i>
                 Follow
               <% end %>
             </div>
           <% elsif !current_user.blank? && current_user.following?(@user) %>
             <div class="img-overlay">
-              <%= link_to unfollow_user_path(@user.username), class: "btn btn-default", style: "color: #676a6c;" do %>
+              <%= link_to unfollow_user_path(@user.username), class: "follow-btn btn-default", style: "color: #676a6c;" do %>
                 <i class="fa fa-user-times"></i>
                 Unfollow
               <% end %>
@@ -27,7 +27,7 @@
                 <i class="fa fa-camera user-profile-overlay" style="display: none;"></i>
               </div>
             </a>
-            <%= form_for(@user, html: { multipart: true, style: "height: 0px;" }, id: "edit_user_form") do |f| %>
+            <%= form_for(@user, html: { multipart: true, style: "height: 0px;", id: "edit_user_form" }) do |f| %>
               <%= f.file_field :avatar, style: "visibility: hidden;", id: 'user_avatar'  %>
               <%= f.submit "Update Avatar", id: "send_avatar_btn", style: "visibility: hidden;" %>
             <% end %>
