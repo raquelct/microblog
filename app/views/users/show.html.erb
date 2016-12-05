@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-body" style="padding-top: 0px; padding-right: 0px;">
         <div class="row">
-          <img src="/assets/banner.png" class="img-responsive">
+          <%= image_tag "banner.png", class: "img-responsive" %>
           <% if !current_user.blank? && current_user.can_follow?(@user) %>
             <div class="img-overlay">
               <%= link_to follow_user_path(@user.username), class: "follow-btn btn-default", style: "color: #676a6c;" do %>

@@ -1,5 +1,5 @@
 <%= form_tag(search_users_path, method: :get, class: "navbar-form navbar-left") do %>
-  <%= text_field_tag 'search', params[:search], class: "form-control search-input", placeholder: "Search" %>
+  <%= text_field_tag 'search', params[:search], class: "form-control search-input", placeholder: ":all to search all users" %>
   <%= button_tag type: "submit", class: "btn btn-default" do %>
     <i class="fa fa-search"></i>
   <% end %>
