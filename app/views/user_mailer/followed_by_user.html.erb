@@ -5,7 +5,7 @@
   <tbody>
     <tr>
       <td style="text-align: center;">
-        <%= link_to image_tag(@follower.avatar.blank? ? 'default-avatar.png' : @follower.avatar.url(:thumb)), Rails.application.routes.url_helpers.url_for(controller: :users, action: :show, username: @follower.username), style: "width: 100px; height: 100px;" %>
+        <%= link_to image_tag(@follower.avatar.url(:thumb)), Rails.application.routes.url_helpers.url_for(controller: :users, action: :show, username: @follower.username), style: "width: 100px; height: 100px;" %>
       </td>
     </tr>
     <tr>
