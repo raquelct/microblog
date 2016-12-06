@@ -56,8 +56,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "microblog_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.raise_delivery_errors = false
-
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -86,8 +84,11 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: ENV['APPLICATION_URL'] }
+  Rails.application.routes.default_url_options = { host: ENV['APPLICATION_URL'] }
 
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     address:        "smtp.sendgrid.net",
