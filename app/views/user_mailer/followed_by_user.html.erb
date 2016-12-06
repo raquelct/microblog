@@ -1,8 +1,26 @@
+<p><%= @user.name %>,</p>
+<p>You have been followed by:</p>
 
-<p>Hello, <%= @user.name %></p>
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="670">
+  <tbody>
+    <tr>
+      <td style="text-align: center;">
+        <%= link_to image_tag(@follower.avatar.blank? ? 'default_profile.jpg' : @follower.avatar.url(:thumb)), Rails.application.routes.url_helpers.url_for(controller: :users, action: :show, username: @follower.username), style: "width: 100px; height: 100px;" %>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">
+        <%= link_to @follower.name, Rails.application.routes.url_helpers.url_for(controller: :users, action: :show, username: @follower.username) %>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">
+        <%= link_to "@#{@follower.username}", Rails.application.routes.url_helpers.url_for(controller: :users, action: :show, username: @follower.username) %>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-<p>You can you have been followed by the user:</p>
-
-<p><%= link_to Rails.application.routes.url_helpers.url_for(controller: :users, action: :show, username: @follower.username), style: "-moz-user-select: none; background-image: none; border: 1px solid transparent; cursor: pointer; display: inline-block; font-size: 14px; font-weight: normal; line-height: 1.42857; margin-bottom: 0; padding: 6px 12px; text-align: center; vertical-align: middle; white-space: nowrap; text-decoration: none; border-radius: 3px; background-color: #1ab394; border-color: #1ab394; color: #FFFFFF;" do %></p>
-  <%=@follower.username%>
-<% end %>
+<div style="margin-top: 30px; text-align: center;">
+  <%= link_to "Go to your new follower profile", Rails.application.routes.url_helpers.url_for(controller: :users, action: :show, username: @follower.username), style: "-moz-user-select: none; background-image: none; border: 1px solid transparent; cursor: pointer; display: inline-block; font-size: 14px; font-weight: normal; line-height: 1.42857; margin-bottom: 0; padding: 6px 12px; text-align: center; vertical-align: middle; white-space: nowrap; text-decoration: none; border-radius: 3px; background-color: #1ab394; border-color: #1ab394; color: #FFFFFF;" %>
+</div>
